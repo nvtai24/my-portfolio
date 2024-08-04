@@ -33,7 +33,7 @@ body {
 
 section {
     /* min-height: 100vh; */
-    padding: 10rem 9% 2rem;
+    padding: 10rem 9% 10rem;
 }
 
 
@@ -142,7 +142,13 @@ a.active {
     align-items: center;
 }
 
-
+.my-diploma {
+    background: linear-gradient(to right, #00cc99 0%, #3399ff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    /* For Safari */
+    color: transparent;
+}
 
 .home-content h3 {
     font-size: 3.2rem;

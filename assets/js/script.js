@@ -41,17 +41,38 @@ window.onscroll = () => {
 
 
 /*==================== scroll reveal ====================*/
-ScrollReveal({ 
-    reset: true,
-    distance: '80px',
-    duration: 2000,
-    delay: 200
-});
+// ScrollReveal({ 
+//     reset: true,
+//     distance: '80px',
+//     duration: 2000,
+//     delay: 200
+// });
 
-ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
-ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
-ScrollReveal().reveal('.home-content h1, .about-img ', { origin: 'left' });
-ScrollReveal().reveal('.home-content p, .about-content ', { origin: 'right' });
+// ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
+// ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
+// ScrollReveal().reveal('.home-content h1, .about-img ', { origin: 'left' });
+// ScrollReveal().reveal('.home-content p, .about-content ', { origin: 'right' });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Kiểm tra sự tồn tại của phần tử about-img trong DOM
+    if (document.querySelector('.about-img')) {
+        // Cấu hình ScrollReveal
+        ScrollReveal({ 
+            reset: true,
+            distance: '80px',
+            duration: 2000,
+            delay: 200
+        });
+
+        // Thêm hiệu ứng cho about-img
+        ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
+        ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
+        ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
+        ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
+    } else {
+        console.error('Phần tử .about-img không tồn tại trong DOM');
+    }
+});
 
 /*==================== typed js ====================*/
 const typed = new Typed('.multiple-text', {
