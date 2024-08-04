@@ -55,10 +55,16 @@ ScrollReveal().reveal('.home-content p, .about-content ', { origin: 'right' });
 
 /*==================== typed js ====================*/
 const typed = new Typed('.multiple-text', {
-    strings: ['Developer', 'Hacker', 'DevOps'],
-    typeSpeed: 100,
-    backSpeed: 100,
-    backDelay: 1000,
+    strings: [
+        '<span class="text-color-1">Hello, nice to meet you!</span>',
+        '<span class="text-color-2">こんにちは、はじめまして。</span>',
+        '<span class="text-color-3">안녕하세요, 만나서 반갑습니다!</span>',
+        '<span class="text-color-4">你好，很高兴认识你!</span>'
+    ],
+    typeSpeed: 100,   // Giảm tốc độ gõ
+    backSpeed: 100,    // Giảm tốc độ xóa
+    backDelay: 500,    // Thay đổi thời gian chờ giữa các vòng lặp
     loop: true
 });
+
 
