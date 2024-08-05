@@ -66,8 +66,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Thêm hiệu ứng cho about-img
         ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
-        ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
-        ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
+        ScrollReveal().reveal('.home-img, .skills-container, .portfolio-box, .contact form', { origin: 'bottom' });
+        ScrollReveal().reveal('.home-content h1, .about-img, .contact-info', { origin: 'left' });
         ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
     } else {
         console.error('Phần tử .about-img không tồn tại trong DOM');
@@ -88,4 +88,8 @@ const typed = new Typed('.multiple-text', {
     loop: true
 });
 
+// download CV
+function downloadCV() {
+    alert('Oops! The CV is currently unavailable. \nPlease try again later ^^');
+}
 

@@ -1,5 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
+/* loading animation */
+/* Loader Styles */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--second-bg-color);
+    /* Màu nền của loader */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    /* Đảm bảo loader nằm trên các phần tử khác */
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.spinner {
+    width: 100px;
+    /* Kích thước của spinner */
+    height: 100px;
+    /* Kích thước của spinner */
+    animation: rotation 0.75s linear infinite;
+}
+
+.path {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 20;
+    stroke-linecap: round;
+    stroke-width: 4;
+    /* Độ dày của đường viền */
+}
+
+@keyframes rotation {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* loading animation end */
+
 * {
     margin: 0;
     padding: 0;
@@ -17,6 +67,7 @@
     --second-bg-color: #323946;
     --text-color: #fff;
     --main-color: #0ef;
+    --main-gradient: linear-gradient(to right, #00cc99 0%, #3399ff 100%);
 }
 
 html {
@@ -32,7 +83,7 @@ body {
 
 
 section {
-    /* min-height: 100vh; */
+    min-height: 100vh;
     padding: 10rem 9% 10rem;
 }
 
@@ -80,11 +131,11 @@ p {
 }
 
 .text-color-3 {
-    color: #0000ff;
+    color: #5151d3;
 }
 
 .text-color-4 {
-    color: #00ff00;
+    color: #37e937;
 }
 
 
@@ -143,11 +194,25 @@ a.active {
 }
 
 .my-diploma {
-    background: linear-gradient(to right, #00cc99 0%, #3399ff 100%);
+    background: var(--main-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     /* For Safari */
     color: transparent;
+}
+
+.quote {
+    font-style: italic;
+    font-size: 1.2em;
+    color: var(--main-color);
+    border-left: 4px solid var(--main-color);
+    padding-left: 10px;
+    margin: 20px 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    /* Bo tròn các góc */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Đổ bóng nhẹ */
 }
 
 .home-content h3 {
@@ -213,7 +278,7 @@ span {
     height: 32vw;
     border-radius: 50%;
     border: 3px solid var(--main-color);
-    box-shadow: 0 0 150px var(--second-bg-color);
+    box-shadow: 0 0 10rem var(--second-bg-color);
     animation: floatImage 4s ease-in-out infinite;
 }
 
@@ -236,7 +301,7 @@ span {
 
 /* about */
 .about {
-    /* background-color: var(--second-bg-color); */
+    background-color: var(--second-bg-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -262,7 +327,7 @@ span {
 }
 
 .about-img:hover {
-    box-shadow: 0 0 150px var(--second-bg-color);
+    box-shadow: 0 0 2rem var(--main-color);
 
 }
 
@@ -293,13 +358,18 @@ span {
 
 /* about end */
 
-/* services */
-.services h2 {
-    margin-bottom: 5rem;
-
+/* skills */
+.skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
-.services-container {
+.skills h2 {
+    margin-bottom: 5rem;
+}
+
+.skills-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -307,36 +377,115 @@ span {
     gap: 2rem;
 }
 
-.services-container .services-box {
-    flex: 1 1 30rem;
+.skills-box {
+    flex: 1 1 calc(33.333% - 2rem);
+    /* 3 items per row */
     background-color: var(--second-bg-color);
     padding: 3rem 2rem 4rem;
     border-radius: 2rem;
     text-align: center;
     border: .2rem solid var(--bg-color);
     transition: .5s ease;
+    height: auto;
+    /* Điều chỉnh chiều cao tự động */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.services-container .services-box:hover {
+.skills-box:hover {
     border-color: var(--main-color);
     transform: scale(1.02);
 }
 
-.services-box i {
-    font-size: 7rem;
+.skills-box i {
+    font-size: 10rem;
+    margin-bottom: 1rem;
     color: var(--main-color);
 }
 
-.services-box h3 {
+.skills-box h3 {
     font-size: 2.6rem;
 }
 
-.services-box p {
-    font-size: 1.6rem;
-    margin: 1rem 0 3rem;
+.skills-box ul {
+    /* display: none; */
 }
 
-/* services end */
+.skills-box ul li {
+    text-align: justify;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    /* margin: 1rem 0 3rem; */
+}
+
+
+
+/* copi */
+.progress-bar {
+    width: 100%;
+    background-color: var(--text-color);
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.progress {
+    height: 1rem;
+    background: var(--main-gradient);
+    border-radius: 1rem;
+}
+
+/* card */
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skills-box {
+    /* perspective: 1000px; */
+}
+
+.card {
+    width: 100%;
+    height: 25rem;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card-front {}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.skills-box:hover .card {
+    transform: rotateY(180deg);
+}
+
+/* card end */
+
+
+/* skills end */
 
 /* portfolio */
 .portfolio {
@@ -419,7 +568,14 @@ span {
 /* portfolio end */
 
 /* contact */
-.contact {}
+.contact {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--second-bg-color);
+    gap: 3rem;
+}
 
 .contact h2 {
     margin-bottom: 3rem;
@@ -444,7 +600,7 @@ span {
     padding: 1.5rem;
     font-size: 1.6rem;
     color: var(--text-color);
-    background-color: var(--second-bg-color);
+    background-color: var(--bg-color);
     border-radius: .8rem;
     margin: .7rem 0;
 }
@@ -463,6 +619,78 @@ span {
     cursor: pointer;
 }
 
+/* contact info */
+.contact-info {
+    text-align: center;
+}
+
+.contact-info h3 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-info ul li i {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    margin-right: 1rem;
+}
+
+.contact-info ul li span {
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+
+
+
+.contact-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/moutainbg.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+
+.contact-info {
+    position: relative;
+    height: 80%;
+    width: 60rem;
+    max-width: 70rem;
+    border: 2px solid var(--main-color);
+    padding: 4rem;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s ease;
+}
+
+.contact-info:hover {
+    transform: scale(1.02);
+    /* box-shadow: 0 0 2rem var(--main-color); */
+    box-shadow: 0 0 2rem var(--main-color);
+
+}
+
+
 /* contact end  */
 
 /* footer */
@@ -472,7 +700,7 @@ span {
     align-items: center;
     flex-wrap: wrap;
     padding: 2rem 9%;
-    background: var(--second-bg-color);
+    background: var(--bg-color);
 }
 
 .footer-text p {
@@ -504,9 +732,28 @@ span {
 
 /* BREAK POINTS */
 
+
+
 @media screen and (max-width: 1200px) {
     html {
         font-size: 55%;
+    }
+
+    .contact {
+        flex-direction: column;
+    }
+
+    .contact-info {
+        margin-bottom: 5rem;
+        width: 90%;
+    }
+
+}
+
+@media (max-width: 1024px) {
+    .skills-box {
+        flex: 1 1 calc(50% - 2rem);
+        /* 2 items per row */
     }
 }
 
@@ -516,10 +763,10 @@ span {
     }
 
     section {
-        padding: 10rem 3% 2rem;
+        padding: 5rem 3% 2rem;
     }
 
-    .services {
+    .skills {
         padding-bottom: 7rem;
     }
 
@@ -555,6 +802,7 @@ span {
         border-top: .1rem solid rgba(0, 0, 0, .02);
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .02);
         display: none;
+
     }
 
     .navbar.active {
@@ -596,9 +844,15 @@ span {
         margin-top: 4em;
     }
 
-    .services h2 {
+    .skills-box {
+        flex: 1 1 100%;
+        /* 1 item per row */
+    }
+
+    .skills h2 {
         margin-bottom: 3rrem;
     }
+
 
     .portfolio h2 {
         margin-top: 3rem;
@@ -625,6 +879,14 @@ span {
         font-size: 2.4rem;
     }
 
+    h1.my-name {
+        font-size: 4rem;
+    }
+
+    .my-diploma {
+        font-size: 2.2rem;
+    }
+
     .contact form .input-box input {
         width: 100%;
     }
@@ -649,4 +911,16 @@ span {
         text-align: center;
         margin-top: 2rem;
     }
+}
+
+
+
+/* fix for my self */
+
+.skills {
+    /* display: none; */
+}
+
+.portfolio {
+    display: none;
 }

@@ -26,6 +26,19 @@
 </head>
 
 <body>
+
+  <!-- loading animation -->
+  <div class="loader">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 66" height="100px" width="100px" class="spinner">
+      <circle stroke="url(#gradient)" r="20" cy="33" cx="33" stroke-width="1" fill="transparent" class="path"></circle>
+      <linearGradient id="gradient">
+        <stop stop-opacity="1" stop-color="#fe0000" offset="0%"></stop>
+        <stop stop-opacity="0" stop-color="#af3dff" offset="100%"></stop>
+      </linearGradient>
+
+    </svg>
+  </div>
+
   <!-- header design -->
   <header class="header">
     <a href="#home" class="logo">Nvtai</a>
@@ -35,8 +48,8 @@
     <nav class="navbar">
       <a href="#home" class="active">Home</a>
       <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
+      <a href="#skills">My Skills</a>
+      <!-- <a href="#portfolio">Portfolio</a> -->
       <a href="#contact">Contact</a>
 
     </nav>
@@ -47,19 +60,20 @@
   <section class="home" id="home">
     <div class="home-content">
       <h3>👋<span class="multiple-text"></span></h3>
-      <h1>I'm <span>Tai Nguyen Van</span></h1>
+      <h1 class="my-name">I'm <span>Tai Nguyen Van</span></h1>
       <h3><span class="my-diploma">Bachelor of Software Engineering</span></h3>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident quas ipsam molestiae, a sequi porro dolores
-        accusamus! Nulla molestiae ut error quibusdam laborum provident repellat ea hic, qui nam itaque.</p>
+      <p class="quote">"Life is a creative exploration of one's identity, surpassing constraints, and finding true
+        significance. It's
+        a vivid palette where we are both the painter and the painting."</p>
 
       <div class="social-media">
-        <a href="#"><i class='bx bxl-facebook'></i></a>
-        <a href="#"><i class='bx bxl-twitter'></i></a>
-        <a href="#"><i class='bx bxl-instagram-alt'></i></a>
-        <a href="#"><i class='bx bxl-github'></i></a>
+        <a href="https://www.facebook.com/nvtai204" target="_blank"><i class='bx bxl-facebook'></i></a>
+        <a href="https://www.instagram.com/nvtai204" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
+        <a href="https://www.linkedin.com/in/nvtai204" target="_blank"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://github.com/tomhanks-tnv24" target="_blank"><i class='bx bxl-github'></i></a>
       </div>
 
-      <a href="#" class="btn">Download CV</a>
+      <a href="#" class="btn downloadcv" onclick="downloadCV()">Download CV</a>
     </div>
 
     <div class="home-img">
@@ -76,46 +90,131 @@
 
     <div class="about-content">
       <h2 class="heading">About <span>Me</span></h2>
-      <h3>Frontend Developer</h3>
-      <p>Hello! I'm Tai Nguyen Van, a dedicated Software Engineering student. I am currently pursuing a Bachelor's
-        degree in Software Engineering, with a focus on developing robust and efficient software solutions. I'm
-        passionate about programming, problem-solving, and continuously learning new technologies. In my free time, I
-        enjoy working on personal projects, exploring tech trends, and collaborating with others. I'm excited to connect
-        with professionals and peers who share my enthusiasm for technology and innovation.</p>
-      <a href="#" class="btn">Readmore</a>
+      <h3></h3>
+      <p>Hello! I'm Tai Nguyen Van, a dedicated 20-year-old Software Engineering student at FPT University. I am
+        passionate about programming, problem-solving, and continuously learning new technologies. My focus is on
+        developing robust and efficient software solutions. In my free time, I enjoy working on personal projects,
+        exploring tech trends, and collaborating with others. I'm excited to connect with professionals and peers who
+        share my enthusiasm for technology and innovation.</p>
+      <a href="#" class="btn">Read More</a>
     </div>
   </section>
-  <!-- services section design -->
-  <section class="services" id="services">
-    <h2 class="heading">Our <span>Services</span></h2>
 
-    <div class="services-container">
-      <div class="services-box">
-        <i class='bx bx-code-alt'></i>
-        <h3>Web Development</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate explicabo quos accusamus magni laudantium,
-          exercitationem cumque atque dicta culpa error.</p>
-        <a href="#" class="btn">Read More</a>
+  <!-- skills section design -->
+  <section class="skills" id="skills">
+    <h2 class="heading">My <span>Skills</span></h2>
+
+    <div class="skills-container">
+
+      <div class="skills-box">
+        <div class="card">
+          <div class="card-front">
+            <i class='bx bxl-c-plus-plus'></i>
+            <h3>C/C++</h3>
+            <div class="progress-bar">
+              <div class="progress" style="width: 75%;"></div>
+            </div>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li>Developed high-performance applications.</li>
+              <li>Optimized code for better performance.</li>
+              <li>System and embedded programming.</li>
+              <li>Designed complex algorithms.</li>
+              <li>Managed memory and error handling.</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <div class="services-box">
-        <i class='bx bx-code-alt'></i>
-        <h3>Web Development</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate explicabo quos accusamus magni laudantium,
-          exercitationem cumque atque dicta culpa error.</p>
-        <a href="#" class="btn">Read More</a>
+      <div class="skills-box">
+        <div class="card">
+          <div class="card-front">
+            <i class='bx bxl-java'></i>
+            <h3>Java</h3>
+            <div class="progress-bar">
+              <div class="progress" style="width: 90%;"></div>
+            </div>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li>Developed cross-platform applications.</li>
+              <li>Proficient in object-oriented programming.</li>
+              <li>Worked with Java security features.</li>
+              <li>Experienced with Spring and Hibernate.</li>
+              <li>Built scalable web applications.</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-
-      <div class="services-box">
-        <i class='bx bx-code-alt'></i>
-        <h3>Web Development</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate explicabo quos accusamus magni laudantium,
-          exercitationem cumque atque dicta culpa error.</p>
-        <a href="#" class="btn">Read More</a>
+      <div class="skills-box">
+        <div class="card">
+          <div class="card-front">
+            <i class='bx bxl-javascript'></i>
+            <h3>JavaScript</h3>
+            <div class="progress-bar">
+              <div class="progress" style="width: 80%;"></div>
+            </div>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li>Both of front-end and back-end development.</li>
+              <li>Created dynamic and interactive web pages.</li>
+              <li>Experienced with React, Angular, and Vue.</li>
+              <li>Active in the JavaScript community.</li>
+              <li>Developed single-page applications.</li>
+            </ul>
+          </div>
+        </div>
       </div>
+
+      <div class="skills-box">
+        <div class="card">
+          <div class="card-front">
+            <i class='bx bxs-data'></i>
+            <h3>SQL Server</h3>
+            <div class="progress-bar">
+              <div class="progress" style="width: 85%;"></div>
+            </div>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li>Optimized queries for maximum performance.</li>
+              <li>Managed data efficiently.</li>
+              <li>Integrated SQL with various languages.</li>
+              <li>Worked with SQL security features.</li>
+              <li>Designed and maintained databases.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-box">
+        <div class="card">
+          <div class="card-front">
+            <i class='bx bxl-postgresql'></i>
+            <h3>PostgreSQL</h3>
+            <div class="progress-bar">
+              <div class="progress" style="width: 80%;"></div>
+            </div>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li>Implemented advanced SQL queries.</li>
+              <li>Worked with JSON and XML data types.</li>
+              <li>Used PostgreSQL for geospatial data.</li>
+              <li>Configured and managed database replication.</li>
+              <li>Developed custom functions and procedures.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
+  <!-- skills end -->
+
 
   <!-- portfolio section design -->
   <section class="portfolio" id="portfolio">
@@ -184,22 +283,39 @@
 
   <!-- contact section design -->
   <section class="contact" id="contact">
-    <h2 class="heading">Contact <span>Me</span></h2>
 
-    <form action="">
-      <div class="input-box">
-        <input type="text" name="" id="" placeholder="Full name">
-        <input type="email" name="" id="" placeholder="Email Address">
-      </div>
+    <div class="contact-info">
+      <h3>Get in Touch</h3>
+      <ul>
+        <li>
+          <i class='bx bxs-envelope'></i>
+          <span>Email:</span> nvt204norip@gmail.com
+        </li>
+        <li>
+          <i class='bx bxs-phone'></i>
+          <span>Phone:</span> +84 37 351 7718
+        </li>
+        <li>
+          <i class='bx bxl-facebook-circle'></i>
+          <span>Facebook:</span> fb.com/nvtai204
+        </li>
+      </ul>
+    </div>
 
-      <div class="input-box">
-        <input type="text" name="" id="" placeholder="Mobile Number">
-        <input type="text" name="" id="" placeholder="Email Subject">
-      </div>
-      <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-      <input type="submit" value="Send Message" class="btn">
+    <div class="sendme-container">
+      <h2 class="heading">Say <span>Something</span></h2>
+      <form action="">
+        <div class="input-box">
+          <input type="text" name="" id="" placeholder="Your name">
+          <input type="email" name="" id="" placeholder="Your Email">
+        </div>
 
-    </form>
+        <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+        <input type="submit" value="Send Message" class="btn">
+      </form>
+    </div>
+
+
   </section>
 
   <!-- footer design -->
@@ -213,6 +329,15 @@
     </div>
   </footer>
 
+  <script>
+    window.onload = function () {
+      // Hide loader after 1 second
+      setTimeout(() => {
+        document.querySelector('.loader').classList.add('hidden');
+      }, 500); // 1000 milliseconds = 1 second
+    };
+  </script>
+
   <!-- scroll reveal -->
   <script src="https://unpkg.com/scrollreveal"></script>
 
@@ -221,6 +346,7 @@
 
   <!-- custom js -->
   <script src="./assets/js/script.js"></script>
+
 </body>
 
 </html>
