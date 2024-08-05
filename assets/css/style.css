@@ -415,7 +415,7 @@ span {
 }
 
 .skills-box ul li {
-    text-align: justify;
+    text-align: start;
     font-size: 1.8rem;
     color: var(--text-color);
     /* margin: 1rem 0 3rem; */
