@@ -766,6 +766,8 @@ span {
         padding: 5rem 3% 2rem;
     }
 
+
+
     .skills {
         padding-bottom: 7rem;
     }
@@ -788,6 +790,16 @@ span {
         display: block;
     }
 
+    section {
+        padding: 8rem 3% 5rem;
+    }
+
+    .navbar a {
+        margin-left: 0rem;
+        padding: 2rem 0;
+    }
+
+
     .multiple-text {
         font-size: 2.8rem;
     }
@@ -807,13 +819,15 @@ span {
 
     .navbar.active {
         display: block;
+        text-align: center;
+        background-color: var(--second-bg-color);
     }
 
     .navbar a {
         display: block;
         font-size: 2rem;
-        margin: 0 0 3rem;
-        padding-left: 40px;
+        /* padding: 3rem 0; */
+        /* padding: 0; */
     }
 
     .home {
@@ -850,7 +864,7 @@ span {
     }
 
     .skills h2 {
-        margin-bottom: 3rrem;
+        margin: 5rem 0;
     }
 
 
@@ -875,9 +889,15 @@ span {
         font-size: 50%;
     }
 
+    section {
+        /* padding: 5rem 3% 5rem; */
+    }
+
+
     .multiple-text {
         font-size: 2.4rem;
     }
+    
 
     h1.my-name {
         font-size: 4rem;
@@ -885,6 +905,10 @@ span {
 
     .my-diploma {
         font-size: 2.2rem;
+    }
+
+    .contact-info {
+        margin-top: 4rem;
     }
 
     .contact form .input-box input {
