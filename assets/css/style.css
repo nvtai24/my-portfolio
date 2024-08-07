@@ -139,7 +139,14 @@ p {
 }
 
 
-/* common end */
+/* Sử dụng CSS Scroll Snap để đảm bảo các phần tử dính liền với nhau */
+body {
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    scroll-snap-align: start;
+}
 
 /* header */
 .header {
@@ -274,8 +281,8 @@ span {
 }
 
 .home-img img {
-    width: 32vw;
-    height: 32vw;
+    width: 30vw;
+    height: 30vw;
     border-radius: 50%;
     border: 3px solid var(--main-color);
     box-shadow: 0 0 10rem var(--second-bg-color);
@@ -897,7 +904,7 @@ span {
     .multiple-text {
         font-size: 2.4rem;
     }
-    
+
 
     h1.my-name {
         font-size: 4rem;
