@@ -362,7 +362,6 @@ span {
 }
 
 
-
 /* about end */
 
 /* skills */
@@ -429,7 +428,6 @@ span {
 }
 
 
-
 /* copi */
 .progress-bar {
     width: 100%;
@@ -479,7 +477,8 @@ span {
     border-radius: 10px;
 }
 
-.card-front {}
+.card-front {
+}
 
 .card-back {
     transform: rotateY(180deg);
@@ -660,9 +659,6 @@ span {
     margin-right: 0.5rem;
 }
 
-
-
-
 .contact-info::before {
     content: '';
     position: absolute;
@@ -692,11 +688,8 @@ span {
 
 .contact-info:hover {
     transform: scale(1.02);
-    /* box-shadow: 0 0 2rem var(--main-color); */
     box-shadow: 0 0 2rem var(--main-color);
-
 }
-
 
 /* contact end  */
 
@@ -736,14 +729,18 @@ span {
 /* footer end */
 
 
-
 /* BREAK POINTS */
-
 
 
 @media screen and (max-width: 1200px) {
     html {
         font-size: 55%;
+    }
+
+
+    .header {
+        position: fixed;
+
     }
 
     .contact {
@@ -772,7 +769,6 @@ span {
     section {
         padding: 5rem 3% 2rem;
     }
-
 
 
     .skills {
@@ -924,7 +920,6 @@ span {
 }
 
 
-
 @media screen and (max-width: 365px) {
     .home-img img {
         width: 90vw;
@@ -943,7 +938,6 @@ span {
         margin-top: 2rem;
     }
 }
-
 
 
 /* fix for my self */

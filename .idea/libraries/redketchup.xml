@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="redketchup">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/assets/favicon/redketchup.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
