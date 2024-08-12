@@ -848,7 +848,7 @@ span {
     .home-img img {
         width: 70vw;
         height: 70vw;
-        margin-top: 4em;
+        margin: 8rem;
     }
 
     .about {
@@ -859,6 +859,15 @@ span {
         width: 60vw;
         height: 60vw;
         margin-top: 4em;
+    }
+
+    .about-content {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .about-content h2 {
+        text-align: inherit;
     }
 
     .skills-box {
