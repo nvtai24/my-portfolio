@@ -477,8 +477,7 @@ span {
     border-radius: 10px;
 }
 
-.card-front {
-}
+.card-front {}
 
 .card-back {
     transform: rotateY(180deg);
@@ -848,7 +847,8 @@ span {
     .home-img img {
         width: 70vw;
         height: 70vw;
-        margin: 8rem;
+        margin-top: 8rem;
+        margin-bottom: 0rem;
     }
 
     .about {
