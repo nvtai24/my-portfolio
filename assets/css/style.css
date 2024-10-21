@@ -9,12 +9,10 @@
     width: 100vw;
     height: 100vh;
     background-color: var(--second-bg-color);
-    /* Màu nền của loader */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    /* Đảm bảo loader nằm trên các phần tử khác */
     opacity: 1;
     visibility: visible;
     transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
@@ -27,9 +25,7 @@
 
 .spinner {
     width: 100px;
-    /* Kích thước của spinner */
     height: 100px;
-    /* Kích thước của spinner */
     animation: rotation 0.75s linear infinite;
 }
 
@@ -38,7 +34,6 @@
     stroke-dashoffset: 20;
     stroke-linecap: round;
     stroke-width: 4;
-    /* Độ dày của đường viền */
 }
 
 @keyframes rotation {
@@ -46,7 +41,6 @@
         transform: rotate(360deg);
     }
 }
-
 
 /* loading animation end */
 
@@ -75,18 +69,17 @@ html {
     overflow-x: hidden;
 }
 
-
 body {
     background: var(--bg-color);
     color: var(--text-color);
+    scroll-snap-type: y mandatory;
 }
-
 
 section {
     min-height: 100vh;
-    padding: 10rem 9% 10rem;
+    padding: 10rem 9%;
+    scroll-snap-align: start;
 }
-
 
 .heading {
     text-align: center;
@@ -96,7 +89,6 @@ section {
 p {
     text-align: justify;
 }
-
 
 .btn {
     display: inline-block;
@@ -118,7 +110,6 @@ p {
 .multiple-text {
     font-size: 3rem;
     color: #000;
-    /* Màu sắc chính cho văn bản */
     white-space: nowrap;
 }
 
@@ -136,16 +127,6 @@ p {
 
 .text-color-4 {
     color: #37e937;
-}
-
-
-/* Sử dụng CSS Scroll Snap để đảm bảo các phần tử dính liền với nhau */
-body {
-    scroll-snap-type: y mandatory;
-}
-
-section {
-    scroll-snap-align: start;
 }
 
 /* header */
@@ -204,7 +185,6 @@ a.active {
     background: var(--main-gradient);
     background-clip: text;
     -webkit-background-clip: text;
-    /* For Safari */
     color: transparent;
 }
 
@@ -213,13 +193,10 @@ a.active {
     font-size: 1.2em;
     color: var(--main-color);
     border-left: 4px solid var(--main-color);
-    padding-left: 10px;
-    margin: 20px 0;
     padding: 10px 20px;
+    margin: 20px 0;
     border-radius: 5px;
-    /* Bo tròn các góc */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* Đổ bóng nhẹ */
 }
 
 .home-content h3 {
@@ -229,16 +206,11 @@ a.active {
 
 .home-content h3.multiple-text {
     min-width: 300px;
-    /* Hoặc kích thước cố định bạn muốn */
     height: 40px;
-    /* Tùy thuộc vào kích thước font bạn sử dụng */
     display: flex;
     align-items: center;
-    /* Giữ căn chỉnh văn bản theo chiều dọc */
     overflow: hidden;
-    /* Đảm bảo không có phần văn bản nào bị tràn ra ngoài */
 }
-
 
 .home-content h3:nth-of-type(2) {
     margin-bottom: 2rem;
@@ -290,19 +262,13 @@ span {
 }
 
 @keyframes floatImage {
-    0% {
+    0%, 100% {
         transform: translateY(0);
     }
-
     50% {
         transform: translateY(-2.4rem);
     }
-
-    0% {
-        transform: translateY(0);
-    }
 }
-
 
 /* home end */
 
@@ -319,7 +285,6 @@ span {
     width: 30vw;
     height: 40vw;
     overflow: hidden;
-    /* Ẩn phần ảnh bị tràn ra ngoài phần tử chứa */
     border-radius: 5rem;
     border: 3px solid var(--main-color);
     transition: .5s ease;
@@ -335,7 +300,6 @@ span {
 
 .about-img:hover {
     box-shadow: 0 0 2rem var(--main-color);
-
 }
 
 .about-img:hover img {
@@ -361,7 +325,6 @@ span {
     margin: 2rem 0 3rem;
 }
 
-
 /* about end */
 
 /* skills */
@@ -378,27 +341,24 @@ span {
 .skills-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     flex-wrap: wrap;
     gap: 2rem;
 }
 
 .skills-box {
-    flex: 1 1 calc(33.333% - 2rem);
-    /* 3 items per row */
+    flex: 0 0 calc(33.333% - 2rem);
+    width: calc(33.333% - 2rem);
     background-color: var(--second-bg-color);
     padding: 3rem 2rem 4rem;
     border-radius: 2rem;
     text-align: center;
     border: .2rem solid var(--bg-color);
     transition: .5s ease;
-    height: auto;
-    /* Điều chỉnh chiều cao tự động */
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .skills-box:hover {
@@ -416,20 +376,15 @@ span {
     font-size: 2.6rem;
 }
 
-.skills-box ul {
-    /* display: none; */
-}
-
 .skills-box ul li {
     text-align: start;
     font-size: 1.6rem;
     color: var(--text-color);
-    /* margin: 1rem 0 3rem; */
 }
 
-
-/* copi */
+/* progress bar */
 .progress-bar {
+    display: none;
     width: 100%;
     background-color: var(--text-color);
     border-radius: 1rem;
@@ -444,17 +399,6 @@ span {
 }
 
 /* card */
-
-.skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.skills-box {
-    /* perspective: 1000px; */
-}
-
 .card {
     width: 100%;
     height: 25rem;
@@ -477,18 +421,14 @@ span {
     border-radius: 10px;
 }
 
-.card-front {}
-
 .card-back {
-    transform: rotateY(180deg);
+    display: none;
+    /* transform: rotateY(180deg); */
 }
 
 .skills-box:hover .card {
-    transform: rotateY(180deg);
+    /* transform: rotateY(180deg); */
 }
-
-/* card end */
-
 
 /* skills end */
 
@@ -575,7 +515,6 @@ span {
 /* contact */
 .contact {
     display: flex;
-    /* flex-direction: column; */
     justify-content: space-evenly;
     align-items: center;
     background-color: var(--second-bg-color);
@@ -588,9 +527,8 @@ span {
 
 .contact form {
     max-width: 70rem;
-    margin: 1rem auto;
+    margin: 1rem auto 3rem;
     text-align: center;
-    margin-bottom: 3rem;
 }
 
 .contact .input-box {
@@ -618,7 +556,6 @@ span {
     resize: none;
 }
 
-
 .contact form .btn {
     margin-top: 2rem;
     cursor: pointer;
@@ -627,6 +564,15 @@ span {
 /* contact info */
 .contact-info {
     text-align: center;
+    position: relative;
+    height: 80%;
+    width: 60rem;
+    max-width: 70rem;
+    border: 2px solid var(--main-color);
+    padding: 4rem;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s ease;
 }
 
 .contact-info h3 {
@@ -672,25 +618,12 @@ span {
     z-index: 1;
 }
 
-
-.contact-info {
-    position: relative;
-    height: 80%;
-    width: 60rem;
-    max-width: 70rem;
-    border: 2px solid var(--main-color);
-    padding: 4rem;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: .5s ease;
-}
-
 .contact-info:hover {
     transform: scale(1.02);
     box-shadow: 0 0 2rem var(--main-color);
 }
 
-/* contact end  */
+/* contact end */
 
 /* footer */
 .footer {
@@ -727,19 +660,15 @@ span {
 
 /* footer end */
 
-
 /* BREAK POINTS */
-
 
 @media screen and (max-width: 1200px) {
     html {
         font-size: 55%;
     }
 
-
     .header {
         position: fixed;
-
     }
 
     .contact {
@@ -750,13 +679,12 @@ span {
         margin-bottom: 5rem;
         width: 90%;
     }
-
 }
 
 @media (max-width: 1024px) {
     .skills-box {
-        flex: 1 1 calc(50% - 2rem);
-        /* 2 items per row */
+        flex: 0 0 calc(50% - 2rem);
+        width: calc(50% - 2rem);
     }
 }
 
@@ -768,7 +696,6 @@ span {
     section {
         padding: 5rem 3% 2rem;
     }
-
 
     .skills {
         padding-bottom: 7rem;
@@ -797,10 +724,9 @@ span {
     }
 
     .navbar a {
-        margin-left: 0rem;
+        margin-left: 0;
         padding: 2rem 0;
     }
-
 
     .multiple-text {
         font-size: 2.8rem;
@@ -816,7 +742,6 @@ span {
         border-top: .1rem solid rgba(0, 0, 0, .02);
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .02);
         display: none;
-
     }
 
     .navbar.active {
@@ -828,8 +753,6 @@ span {
     .navbar a {
         display: block;
         font-size: 2rem;
-        /* padding: 3rem 0; */
-        /* padding: 0; */
     }
 
     .home {
@@ -848,7 +771,6 @@ span {
         width: 70vw;
         height: 70vw;
         margin-top: 8rem;
-        margin-bottom: 0rem;
     }
 
     .about {
@@ -871,14 +793,13 @@ span {
     }
 
     .skills-box {
-        flex: 1 1 100%;
-        /* 1 item per row */
+        flex: 0 0 100%;
+        width: 100%;
     }
 
     .skills h2 {
         margin: 5rem 0;
     }
-
 
     .portfolio h2 {
         margin-top: 3rem;
@@ -889,10 +810,9 @@ span {
     }
 }
 
-
 @media screen and (max-width: 617px) {
     .portfolio-container {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
     }
 }
 
@@ -901,15 +821,9 @@ span {
         font-size: 50%;
     }
 
-    section {
-        /* padding: 5rem 3% 5rem; */
-    }
-
-
     .multiple-text {
         font-size: 2.4rem;
     }
-
 
     h1.my-name {
         font-size: 4rem;
@@ -927,7 +841,6 @@ span {
         width: 100%;
     }
 }
-
 
 @media screen and (max-width: 365px) {
     .home-img img {
@@ -948,13 +861,12 @@ span {
     }
 }
 
-
 /* fix for my self */
-
 .skills {
-    /* display: none; */
+    display: block;
 }
 
 .portfolio {
     display: none;
 }
+
