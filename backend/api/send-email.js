@@ -3,7 +3,7 @@ const axios = require("axios");
 
 module.exports = async (req, res) => {
   if (req.method === "OPTIONS") {
-    res.setHeader("Access-Control-Allow-Origin", "*"); // Thay '*' bằng tên miền của frontend nếu muốn bảo mật hơn
+    res.setHeader("Access-Control-Allow-Origin", "https://nvtai24-portfolio.vercel.app/"); 
     res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
     res.status(200).end();
