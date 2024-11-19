@@ -63,9 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
         backDelay: 500,
         loop: true
     });
-
-    /*==================== download CV ====================*/
-    document.querySelector('#download-cv').addEventListener('click', () => {
-        alert('Oops! The CV is currently unavailable. \nPlease try again later ^^');
-    });
 });
+
+
+
+
