@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Sending data to backend:", formData);
 
     // Gửi dữ liệu tới backend
-    fetch("https://nvtai-portfolio-backend.vercel.app/send-email", {
+    fetch("https://nvtai-portfolio-backend.vercel.app/api/send-email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
