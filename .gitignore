@@ -7,5 +7,3 @@ node_modules/
 # Backend environment file
 backend/.env
 
-# Package lock files
-package-lock.json
