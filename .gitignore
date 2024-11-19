@@ -2,7 +2,7 @@
 .idea/
 
 # Node modules
-node_modules/
+backend/node_modules/
 
 # Backend environment file
 backend/.env
