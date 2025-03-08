@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("Sending data to backend:", formData);
 
-    // Gửi dữ liệu tới backend
+    // Send data to backend
     fetch("https://nvtai-portfolio-backend.vercel.app/api/send-email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -20,15 +20,27 @@ document.addEventListener("DOMContentLoaded", () => {
     })
       .then((response) => {
         if (response.ok) {
-          alert("Email sent successfully!");
+          Swal.fire({
+            icon: "success",
+            title: "Success!",
+            text: "Your message has been sent successfully!",
+          });
           form.reset();
         } else {
-          alert("Failed to send email.");
+          Swal.fire({
+            icon: "error",
+            title: "Failed!",
+            text: "Failed to send email. Please try again!",
+          });
         }
       })
       .catch((error) => {
         console.error("Error:", error);
-        alert("An error occurred.");
+        Swal.fire({
+          icon: "error",
+          title: "Error!",
+          text: "An error occurred. Please check your internet connection and try again!",
+        });
       });
   });
 });
